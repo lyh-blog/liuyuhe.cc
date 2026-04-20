@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 
 import { getAllPosts } from '@/lib/posts'
@@ -8,11 +9,35 @@ export default function Home() {
   return (
     <main className="page-shell">
       <section className="hero-card">
-        <p className="eyebrow">Markdown Blog</p>
-        <h1 className="hero-title">使用 Next.js 构建支持 Frontmatter 的 Markdown 博客</h1>
-        <p className="hero-summary">
-          首页会自动读取 `src/content/posts` 目录下的 markdown 文件，生成文章列表，并在详情页渲染正文内容。
-        </p>
+        <div className="hero-profile">
+          <Image
+            className="hero-avatar"
+            src="https://avatars.githubusercontent.com/u/171144077?v=4"
+            alt="avatar"
+            width={112}
+            height={112}
+            loading="eager"
+            unoptimized
+          />
+          <div className="hero-copy">
+            <p className="eyebrow">LiuYuhe Blog</p>
+            <h1 className="hero-title">Tenifs</h1>
+            <p className="hero-summary">
+              微信公众号：爱编程的阿彬
+            </p>
+          </div>
+        </div>
+        <div className="hero-socials">
+          <a className="hero-social-link" href="https://github.com/liuyuhe666" target="_blank" rel="noreferrer">
+            GitHub
+          </a>
+          <a className="hero-social-link" href="https://x.com/cnliuyuhe" target="_blank" rel="noreferrer">
+            X
+          </a>
+          <a className="hero-social-link" href="https://t.me/liuyuhe666" target="_blank" rel="noreferrer">
+            Telegram
+          </a>
+        </div>
       </section>
 
       <section className="post-list">

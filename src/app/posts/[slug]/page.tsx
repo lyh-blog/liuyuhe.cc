@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
   }
 
   return {
-    title: `${post.frontmatter.title} | Next.js Markdown Demo`,
+    title: `${post.frontmatter.title} | LiuYuhe`,
     description: post.frontmatter.summary,
   }
 }
@@ -39,9 +39,11 @@ export default async function PostPage({ params }: PostPageProps) {
   return (
     <main className="page-shell">
       <article className="content-card">
-        <Link className="back-link" href="/">
-          Back to posts
-        </Link>
+        <div className="back-link-container">
+          <Link className="back-link" href="/">
+            返回
+          </Link>
+        </div>
         <header className="post-header">
           <p className="eyebrow">Article</p>
           <h1 className="post-title">{post.frontmatter.title}</h1>

@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Next.js Markdown Demo',
-  description: 'Render markdown files in Next.js with @next/mdx',
+  title: 'LiuYuhe',
+  description: 'LiuYuhe Blog',
 }
 
 export default function RootLayout({

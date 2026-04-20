@@ -14,7 +14,7 @@ body {
 }
 
 body {
-  min-height: 100%;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   color: var(--foreground);
@@ -54,7 +54,32 @@ a {
 }
 
 .hero-card {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  align-items: center;
+  justify-content: space-between;
   margin-bottom: 22px;
+}
+
+.hero-profile {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.hero-avatar {
+  width: 112px;
+  height: 112px;
+  border: 1px solid rgba(154, 52, 18, 0.14);
+  border-radius: 999px;
+  object-fit: cover;
+  background: #fff7ed;
+  box-shadow: 0 14px 30px rgba(55, 37, 24, 0.12);
+}
+
+.hero-copy {
+  min-width: min(100%, 280px);
 }
 
 .eyebrow {
@@ -79,6 +104,34 @@ a {
   margin-top: 18px;
   font-size: 1.02rem;
   line-height: 1.8;
+}
+
+.hero-socials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.hero-social-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.48rem 0.9rem;
+  border: 1px solid rgba(154, 52, 18, 0.16);
+  border-radius: 999px;
+  background: rgba(154, 52, 18, 0.08);
+  color: var(--accent);
+  font-size: 0.9rem;
+  transition:
+    transform 160ms ease,
+    border-color 160ms ease,
+    background-color 160ms ease;
+}
+
+.hero-social-link:hover {
+  transform: translateY(-1px);
+  border-color: rgba(154, 52, 18, 0.28);
+  background: rgba(154, 52, 18, 0.14);
 }
 
 .post-list {
@@ -143,6 +196,11 @@ a {
 
 .post-body {
   padding-top: 8px;
+}
+
+.back-link-container {
+  display: flex;
+  justify-content: flex-end;
 }
 
 .back-link {
@@ -230,14 +288,29 @@ a {
 
 .mdx-figure {
   margin-top: 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mdx-figure > span {
+  max-width: 100%;
 }
 
 .mdx-image {
+  display: block;
   width: 100%;
   height: auto;
+  margin-inline: auto;
   border: 1px solid var(--border);
   border-radius: 22px;
   background: #fff;
+}
+
+.mdx-image-remote {
+  max-height: min(70vh, 960px);
+  width: auto;
+  max-width: 100%;
 }
 
 .mdx-caption {
@@ -255,6 +328,19 @@ a {
   .content-card {
     padding: 24px 18px;
     border-radius: 22px;
+  }
+
+  .hero-card,
+  .hero-profile {
+    align-items: flex-start;
+  }
+
+  .hero-profile {
+    flex-direction: column;
+  }
+
+  .hero-socials {
+    justify-content: flex-start;
   }
 
   .post-card {
